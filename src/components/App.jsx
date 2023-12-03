@@ -12,6 +12,13 @@ export class App extends Component {
   }
   stateArray = Object.keys(this.state)
 
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad
+  }
+
+   countPositiveFeedbackPercentage = () =>{
+  {return Math.floor(this.state.good * 100 / this.countTotalFeedback()) }
+}
   isAnyChanges = () =>{
     return this.state.good !== 0 || this.state.neutral !== 0 || this.state.bad !== 0
   }
@@ -33,7 +40,7 @@ export class App extends Component {
         <Section title="Statistics">
           { !this.isAnyChanges() && < Notification message="There is no feedback" style={this.display='none'}></Notification>}
           {this.isAnyChanges() && <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad}
-            total={this.Total} positivePercentage={this.positiveFeedback} style={this.display='block'}></Statistics >}
+            total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()} style={this.display='block'}></Statistics >}
         </Section>
       </>
     )

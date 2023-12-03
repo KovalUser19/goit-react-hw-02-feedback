@@ -7,7 +7,7 @@ export const Statistics = (props) => {
             <p>Neutral: {props.neutral }</p>
             <p>Bad: {props.bad }</p>
             <p>Total:{props.total}</p>
-            <p>Positive feedback:{props. positivePercentage}%</p>
+            <p>Positive feedback:{props.positivePercentage}%</p>
         </div>
     )
   }

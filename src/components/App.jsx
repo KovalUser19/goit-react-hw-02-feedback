@@ -17,7 +17,7 @@ export class App extends Component {
   }
 
    countPositiveFeedbackPercentage = () =>{
-  {return Math.floor(this.state.good * 100 / this.countTotalFeedback()) }
+  return Math.floor(this.state.good * 100 / this.countTotalFeedback())
 }
   isAnyChanges = () =>{
     return this.state.good !== 0 || this.state.neutral !== 0 || this.state.bad !== 0
